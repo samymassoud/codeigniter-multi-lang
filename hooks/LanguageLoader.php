@@ -40,11 +40,11 @@ class LanguageLoader {
             if ($site_lang) {
                 $ci->lang->load('general', $ci->session->userdata('site_lang'));
                 $ci->config->set_item('language', $ci->session->userdata('site_lang'));
-                redirect(base_url(array_search($site_lang,$system_lang).'/'.$ci->uri->uri_string(),'301'));
+                redirect(base_url(array_search($site_lang,$system_lang).'/'.$ci->uri->uri_string()),'location', 301);
             } else {
                 $ci->lang->load('general', $ci->config->item ('language'));
                 $ci->config->set_item('language', $ci->config->item ('language'));
-                redirect(base_url($ci->config->item ('short_language').'/'.$ci->uri->uri_string(),'301'));
+                redirect(base_url($ci->config->item ('short_language').'/'.$ci->uri->uri_string()),'location', 301);
             }
         }
     }
