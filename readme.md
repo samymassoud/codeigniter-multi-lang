@@ -27,9 +27,9 @@ Thanks to mHisham, you must enable hooks in config file
 Last thing 
 add these lines in routers.php for each language you need i.e(Arabic and english here).
 ``$route['^ar/(.+)$'] = "$1";
-$route['^en/(.+)$'] = "$1";
+$route['^en/(.+)$'] = "$1";``
 
-$route['^ar$'] = $route['default_controller'];
+``$route['^ar$'] = $route['default_controller'];
 $route['^en$'] = $route['default_controller'];``
 
 ##That's all
