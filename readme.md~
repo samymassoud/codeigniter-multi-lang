@@ -14,12 +14,23 @@ This code adds support for two languages (Arabic and English) you can add as man
 With no extra configuration. you just need to create languages folders. i.e. (Arabic and English) inside `application/languages` folder and add `general_lang.php` for each one.
 
 #Example
-To show word `hello` in booth languages. you have to create this key inside booth files `general_lang.php` inside Arabic folder and english folder 
+To show word `hello` in booth languages. you have to create this key inside booth files `general_lang.php` inside Arabic folder and English folder 
 
 ```$lang['hello'] = 'Hello'; This for english folder
 $lang['hello'] = 'مرحبا'; This for arabic folder```
 
 And at view,or controller or even model you can call `echo lang('hello');`
+
+Thanks to mHisham, you must enable hooks in config file
+``$config['enable_hooks'] = true;``
+
+Last thing 
+add these lines in routers.php for each language you need i.e(Arabic and english here).
+``$route['^ar/(.+)$'] = "$1";
+$route['^en/(.+)$'] = "$1";
+
+$route['^ar$'] = $route['default_controller'];
+$route['^en$'] = $route['default_controller'];``
 
 ##That's all
 Please feel free to ask for any modification or report bugs <br/>

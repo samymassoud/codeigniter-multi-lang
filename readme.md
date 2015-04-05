@@ -21,6 +21,17 @@ $lang['hello'] = 'مرحبا'; This for arabic folder```
 
 And at view,or controller or even model you can call `echo lang('hello');`
 
+Thanks to mHisham, you must enable hooks in config file
+``$config['enable_hooks'] = true;``
+
+Last thing 
+add these lines in routers.php for each language you need i.e(Arabic and english here).
+``$route['^ar/(.+)$'] = "$1";
+$route['^en/(.+)$'] = "$1";
+
+$route['^ar$'] = $route['default_controller'];
+$route['^en$'] = $route['default_controller'];``
+
 ##That's all
 Please feel free to ask for any modification or report bugs <br/>
 Thanks.
